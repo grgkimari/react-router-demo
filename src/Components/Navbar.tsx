@@ -1,11 +1,19 @@
+import { AppBar, Toolbar } from "@mui/material";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav>
-      <NavLink to="/">Home</NavLink>
+
+      <AppBar>
+        <Toolbar variant="dense" sx={{
+            justifyContent : "space-evenly"
+            }}>
+        <NavLink to="/">Home</NavLink>
       <NavLink to="/about">About</NavLink>
-    </nav>
+      <NavLink to="/products">Products</NavLink>
+        </Toolbar>
+      </AppBar>
+
   );
 };
 
