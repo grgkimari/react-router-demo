@@ -31,6 +31,7 @@ function App() {
           <Route path="users" element={<Users />}/>
           <Route path="/users/:userid" element={<UserDetails />}/>
           <Route path="/users/admin" element={<Admin />}/>
+          <Route path="/users?filter=active" element
         </Routes>
       </>
     </div>
