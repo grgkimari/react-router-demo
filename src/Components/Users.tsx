@@ -1,14 +1,18 @@
-import { Typography } from "@mui/material"
+import { Button, Typography } from "@mui/material"
+import { useSearchParams } from "react-router-dom"
 
 const Users = () => {
+    const [searchParams, setSearchParams] = useSearchParams()
     return(
         <Typography sx={{
             marginTop : "4rem"
         }}>
-        <h1>User 1</h1>
-    <h1>User 2</h1>
-    <h1>User 3</h1>
-    </Typography>
+            <Button variant="outlined" onClick={() => setSearchParams({
+                filter : "active"
+            })}>Active users</Button>
+            <Button variant="outlined" onClick={() => setSearchParams({})}>Reset Filters</Button>
+            <Typography>{searchParams.get('filter') === "active" ? "List of active users" : "List of users"}</Typography>
+        </Typography>
     )
 }
 
